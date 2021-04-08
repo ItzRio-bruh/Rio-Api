@@ -8,7 +8,7 @@ var zahirr = db.get("zahirr");
 	console.log('')
 }
 
-var creatorList = ['@zahirrr','@zhirrrgans','@zhirr_ajalah','@zahiranjay', '@zahirganssss','@zhirrganteng','@zahirrgantengg'];
+var creatorList = ['@Rio','@Riu','@Yuda','@Raihan'];
 var creator = creatorList[Math.floor(Math.random() * creatorList.length)];
 
 
@@ -40,7 +40,7 @@ loghandler = {
         creator: `${creator}`,
         code: 406,
         message: 'masukan parameter apikey',
-        getApikey: 'gak punya apikey? chat gw aja yaaa di wa.me/6283898698875 , key nya gratis kok gan, jadi santuyy ajaa'
+        getApikey: 'gak punya apikey, mau beli? chat di wa.me/6285664770042 , key nya murah kok ngab, bisa nego :v'
     },
     notkey: {
         status: false,
@@ -112,7 +112,7 @@ loghandler = {
         status: false,
         creator: `${creator}`,
         code: 406,
-        message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6283898698875 , key nya gratis kok gan, jadi santuyy ajaa'
+        message: 'apikey invalid, gak punya apikey, mau beli? chat gw aj di wa.me/6285664770042 , key nya murah kok ngab, bisa nego :v'
     },
     invalidlink: {
         status: false,
@@ -2788,7 +2788,7 @@ router.get('/maker/special/epep', async (req, res, next) => {
             text = req.query.text
             
 	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'zahirgans') return res.json(loghandler.invalidKey)
+	if(apikeyInput != 'Rio_F@303') return res.json(loghandler.invalidKey)
     if (!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter text"})
 
        fetch(encodeURI(`https://textmaker-api-zahirr.herokuapp.com/api/special/sertifikatepep?text=${text}`))
@@ -2796,7 +2796,7 @@ router.get('/maker/special/epep', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zhirrr',
+             	author: 'Rio Fernanda',
                  result
              })
          })
