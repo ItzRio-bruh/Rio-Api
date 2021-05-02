@@ -211,6 +211,20 @@ router.get('/cekapikey', async (req, res, next) => {
 res.send(JSON.parse(json))
 })
 
+router.get('menu nya', async(req, res, next) => {
+  const apikey = req.query.apikey;
+  const url = req.query.url;
+  if(!url) return res.json(loghandler.noturl)
+  if(!apikey) return res.json(loghandler.notparam)
+  if(listkey.includes(apikey)){
+  let hasil = `rest api yang ingin tembak :D`
+  data = await fetch(hasil).then(v => v.buffer())
+         await fs.writeFileSync(__path +'/tmp/gambar ngentod', data)
+        res.sendFile(__path+'/tmp/skatch.jpeg')
+  } else {
+    res.json(loghandler.invalidKey)
+  }
+});
 router.get('/addapikey', (req, res, next) => {
     var apikey = req.query.apikey,
         status = req.query.status,
