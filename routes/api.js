@@ -8,7 +8,7 @@ var zahirr = db.get("zahirr");
 	console.log('')
 }
 
-var creatorList = ['@Rio','@Riu','@Yuda','@Raihan'];
+var creatorList = ['Rio'];
 var creator = creatorList[Math.floor(Math.random() * creatorList.length)];
 
 
@@ -749,6 +749,21 @@ router.get('/textmaker/senja', async (req, res, next) => {
             res.json(loghandler.error)
         }
 })
+
+router.get('menu nya', async(req, res, next) => {
+  const apikey = req.query.apikey;
+  const url = req.query.url;
+  if(!url) return res.json(loghandler.noturl)
+  if(!apikey) return res.json(loghandler.notparam)
+  if(listkey.includes(apikey)){
+  let hasil = `rest api yang ingin tembak :D`
+  data = await fetch(hasil).then(v => v.buffer())
+         await fs.writeFileSync(__path +'/tmp/gambar ngentod', data)
+        res.sendFile(__path+'/tmp/skatch.jpeg')
+  } else {
+    res.json(loghandler.invalidKey)
+  }
+});
 
 router.get('/kisahnabi', async (req, res, next) => {
 	var nabi = req.query.nabi,
